@@ -21,11 +21,6 @@ namespace PlayerMoveSystem
             movement.Normalize();
             Vector3 newPosition = transform.position + new Vector3(movement.x, movement.y, 0f) * speed * Time.deltaTime;
 
-/*            Vector3 clampedPosition = Camera.main.WorldToViewportPoint(newPosition);
-            clampedPosition.x = Mathf.Clamp01(clampedPosition.x);
-            clampedPosition.y = Mathf.Clamp01(clampedPosition.y);
-            newPosition = Camera.main.ViewportToWorldPoint(clampedPosition);
-*/
             Vector4 screenBounds = GetScreenBounds();
             newPosition.x = Mathf.Clamp(newPosition.x, screenBounds.x, screenBounds.y);
             newPosition.y = Mathf.Clamp(newPosition.y, screenBounds.z, screenBounds.w);
