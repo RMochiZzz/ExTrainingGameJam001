@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Combat.PlayerAttackMotion
+namespace Combat.PlayerBulletMotion
 {
     public class PlayerBulllet : MonoBehaviour
     {
@@ -40,7 +40,6 @@ namespace Combat.PlayerAttackMotion
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 Destroy(this.gameObject);
-                // ‚±‚±‚É’Ç‰Á‚Ìˆ—‚ğ‹Lq‚·‚é
             }
         }
     }

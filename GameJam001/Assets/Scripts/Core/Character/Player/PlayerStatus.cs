@@ -8,12 +8,12 @@ namespace PlayerStatusList
     {
         private int maxHP = 3;
         private int currentHP;
-        private int Power;
+        private int Level;
 
         private void Start()
         {
             currentHP = maxHP;
-            Power = 1;
+            Level = 1;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +29,12 @@ namespace PlayerStatusList
                     // ここに適切な処理を記述する
                     Debug.Log("死亡");
                 }
+            }
+
+            if (collision.gameObject.CompareTag("LevelUpItem"))
+            {
+                Level += 1;
+                Debug.Log("現在レベル: " + Level);
             }
         }
     }
