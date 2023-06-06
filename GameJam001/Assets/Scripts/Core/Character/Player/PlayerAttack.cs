@@ -14,7 +14,7 @@ namespace Combat.PlayerAttackMotion
         // Start is called before the first frame update
         void Start()
         {
-
+            timer = AttackInterval;
         }
 
         // Update is called once per frame
