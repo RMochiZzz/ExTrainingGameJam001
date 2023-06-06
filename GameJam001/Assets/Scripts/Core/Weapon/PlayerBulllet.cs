@@ -37,8 +37,11 @@ namespace Combat.PlayerAttackMotion
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Destroy(this.gameObject);
+            if (collision.gameObject.CompareTag("EnemyTag"))
+            {
+                Destroy(this.gameObject);
+                // ‚±‚±‚É’Ç‰Á‚Ìˆ—‚ğ‹Lq‚·‚é
+            }
         }
     }
-
 }
