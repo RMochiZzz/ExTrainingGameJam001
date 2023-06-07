@@ -6,21 +6,21 @@ namespace Combat.PlayerAttackMotion
 {
     public class PlayerAttack : MonoBehaviour
     {
-        [SerializeField] private GameObject attackObject;
+        public GameObject PlayerBulletPrefab;
         [SerializeField] private float AttackInterval;
 
-        private float timer;
+        private float timer = 0.0f;
 
         // Start is called before the first frame update
         void Start()
         {
-            timer = AttackInterval;
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(timer > AttackInterval)
+            if (timer > AttackInterval)
             {
                 Attack();
                 timer = 0.0f;
@@ -33,11 +33,7 @@ namespace Combat.PlayerAttackMotion
 
         public void Attack()
         {
-            GameObject g = Instantiate(attackObject);
-            g.transform.SetParent(transform);
-            g.transform.position = attackObject.transform.position;
-            g.transform.rotation = attackObject.transform.rotation;
-            g.SetActive(true);
+            GameObject bullet = Instantiate(PlayerBulletPrefab, transform.position, transform.rotation);
         }
     }
 
