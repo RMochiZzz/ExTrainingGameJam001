@@ -6,13 +6,10 @@ namespace PlayerStatusList
 {
     public class PlayerStatus : MonoBehaviour
     {
-        private int maxHP = 3;
-        [HideInInspector] public int currentHP;
         [HideInInspector] public int Level;
 
         private void Start()
         {
-            currentHP = maxHP;
             Level = 1;
         }
 

@@ -17,7 +17,7 @@ namespace Combat.PlayerDamage
         // Start is called before the first frame update
         void Start()
         {
-            playerStatus = GetComponent<PlayerStatus>();
+
         }
 
         // Update is called once per frame
@@ -34,18 +34,18 @@ namespace Combat.PlayerDamage
             if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Enemy"))
             {
                 if (isInvincible) return;
-                playerStatus.currentHP -= 1;
-                Debug.Log("残りHP: " + playerStatus.currentHP);
 
-                if (playerStatus.currentHP <= 0)
+                GManager.instance.SubHeartNum();
+
+                if(GManager.instance.HeartNum <= 0)
                 {
                     GameOver();
-                    // プレイヤーのHPが0以下になった場合の処理
                 }
                 else
                 {
                     StartInvincibleState();
                 }
+
             }
         }
 
@@ -81,5 +81,4 @@ namespace Combat.PlayerDamage
             Debug.Log("ゲームオーバー");
         }
     }
-
 }
