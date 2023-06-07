@@ -232,6 +232,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ada7f77c3fbaf046999e003cc41b9eb, type: 3}
+--- !u!1 &1216805929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6106369527395085038, guid: 901846601ebae794daa810dd049baa57, type: 3}
+  m_PrefabInstance: {fileID: 3943431598738865348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1216805938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216805929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237d54ac8d9c0e2439bacdca5649e431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2038087211
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 6736697461553290694, guid: 1e05be323ead9d54695b00bb01783c04, type: 3}
     - target: {fileID: 1581794877623825983, guid: 901846601ebae794daa810dd049baa57, type: 3}
       propertyPath: AttackInterval
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1581794877623825983, guid: 901846601ebae794daa810dd049baa57, type: 3}
       propertyPath: PlayerBulletPrefab
@@ -399,7 +416,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6106369527395085038, guid: 901846601ebae794daa810dd049baa57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1216805938}
   m_SourcePrefab: {fileID: 100100000, guid: 901846601ebae794daa810dd049baa57, type: 3}
 --- !u!1001 &7283448520500386374
 PrefabInstance:
