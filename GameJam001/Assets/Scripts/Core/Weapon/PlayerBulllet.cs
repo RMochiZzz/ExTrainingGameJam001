@@ -20,11 +20,10 @@ namespace Combat.PlayerBulletMotion
         }
 
         // Update is called once per frame
-        void FixedUpdate()
+        void Update()
         {
             float d = Vector3.Distance(transform.position, defaultPos);
 
-            //Å‘åˆÚ“®‹——£‚ð’´‚¦‚Ä‚¢‚é
             if (d > maxDistance)
             {
                 Destroy(this.gameObject);
