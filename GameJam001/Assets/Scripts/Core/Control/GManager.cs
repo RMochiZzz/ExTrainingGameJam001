@@ -9,7 +9,8 @@ public class GManager : MonoBehaviour
     public int HeartNum;
     public int defaultLevelNum;
     public int LevelNum;
-    [HideInInspector] public bool isGameOver = false;
+    /*[HideInInspector]*/ public bool isGameOver = false;
+    /*[HideInInspector]*/ public bool isGameClear = false;
 
 
     private void Awake()
@@ -39,23 +40,20 @@ public class GManager : MonoBehaviour
         Debug.Log("Žc‚èHP: " + HeartNum);
     }
 
-    public void RetryGame()
+    public void AddLevelNum()
+    {
+        ++LevelNum;
+
+        Debug.Log("Level: " + LevelNum);
+    }
+
+    public void StartGame()
     {
         isGameOver = false;
+        isGameClear = false;
         HeartNum = defaultHeartNum;
         LevelNum = defaultLevelNum;
 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using PlayerStatusList;
 
 namespace Combat.PlayerDamage
 {
@@ -10,23 +8,31 @@ namespace Combat.PlayerDamage
     {
         private bool isInvincible = false;
         private int blinkCount = 0;
-        private bool isGameOver = false;
 
-        private PlayerStatus playerStatus;
+        [SerializeField] private Sprite DeadSprite;
+        [SerializeField] private AudioClip playerHittedSE;
+        [SerializeField] private AudioClip playerDeadSE;
+        private AudioSource audioSource;
+        [SerializeField] private float HitseVolum;
+        [SerializeField] private float DeadseVolum;
+
+        private SpriteRenderer spriteRenderer;
+
+        private void Awake()
+        {
+        }
 
         // Start is called before the first frame update
         void Start()
         {
-
+            audioSource = GetComponent<AudioSource>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         // Update is called once per frame
         private void Update()
         {
-            if (isGameOver && Input.GetKeyDown(KeyCode.Return))
-            {
-                SceneManager.LoadScene("MenuScene");
-            }
+
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -37,15 +43,17 @@ namespace Combat.PlayerDamage
 
                 GManager.instance.SubHeartNum();
 
-                if(GManager.instance.HeartNum <= 0)
+                if(!GManager.instance.isGameOver)
                 {
-                    GameOver();
+                    PlayPlayerHittedSE(HitseVolum);
+                    StartInvincibleState();
                 }
                 else
                 {
+                    ChangeSprite(DeadSprite);
+                    PlayPlayerDeadSE(DeadseVolum);
                     StartInvincibleState();
                 }
-
             }
         }
 
@@ -71,14 +79,22 @@ namespace Combat.PlayerDamage
 
             isInvincible = false;
             GetComponent<Renderer>().enabled = true;
+            if (GManager.instance.isGameOver) Destroy(gameObject);
         }
 
-        private void GameOver()
+        private void PlayPlayerHittedSE(float volumeScale)
         {
-//           Destroy(gameObject); // プレイヤーオブジェクトを破棄
-//           Time.timeScale = 0f; // ゲーム内の全ての処理を停止
-            isGameOver = true;
-            Debug.Log("ゲームオーバー");
+            audioSource.PlayOneShot(playerHittedSE, volumeScale);
+        }
+
+        private void PlayPlayerDeadSE(float volumeScale)
+        {
+            audioSource.PlayOneShot(playerDeadSE, volumeScale);
+        }
+
+        private void ChangeSprite(Sprite sprite)
+        {
+            spriteRenderer.sprite = sprite;
         }
     }
 }
