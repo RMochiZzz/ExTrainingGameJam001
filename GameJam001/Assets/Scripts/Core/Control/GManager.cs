@@ -39,7 +39,14 @@ public class GManager : MonoBehaviour
         Debug.Log("Žc‚èHP: " + HeartNum);
     }
 
-    public void RetryGame()
+    public void AddLevelNum()
+    {
+        ++LevelNum;
+
+        Debug.Log("Level: " + LevelNum);
+    }
+
+    public void StartGame()
     {
         isGameOver = false;
         HeartNum = defaultHeartNum;

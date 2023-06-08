@@ -12,7 +12,19 @@ namespace Combat.PlayerDamage
         private int blinkCount = 0;
         private bool isGameOver = false;
 
+        public Sprite DeadSprite;
+        public AudioClip playerHittedSE;
+        public AudioClip playerDeadSE;
+        private AudioSource audioSource;
+
+        private SpriteRenderer spriteRenderer;
         private PlayerStatus playerStatus;
+
+        private void Awake()
+        {
+            audioSource = GetComponent<AudioSource>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -23,10 +35,10 @@ namespace Combat.PlayerDamage
         // Update is called once per frame
         private void Update()
         {
-            if (isGameOver && Input.GetKeyDown(KeyCode.Return))
+/*            if (isGameOver && Input.GetKeyDown(KeyCode.Return))
             {
                 SceneManager.LoadScene("MenuScene");
-            }
+            }*/
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -37,15 +49,18 @@ namespace Combat.PlayerDamage
 
                 GManager.instance.SubHeartNum();
 
-                if(GManager.instance.HeartNum <= 0)
+                if(!GManager.instance.isGameOver)
                 {
-                    GameOver();
+                    PlayPlayerHittedSE();
+                    StartInvincibleState();
                 }
                 else
                 {
+                    isGameOver = true;
+                    ChangeSprite(DeadSprite);
+                    PlayPlayerDeadSE();
                     StartInvincibleState();
                 }
-
             }
         }
 
@@ -71,14 +86,22 @@ namespace Combat.PlayerDamage
 
             isInvincible = false;
             GetComponent<Renderer>().enabled = true;
+            if (isGameOver) Destroy(gameObject);
         }
 
-        private void GameOver()
+        private void PlayPlayerHittedSE()
         {
-//           Destroy(gameObject); // プレイヤーオブジェクトを破棄
-//           Time.timeScale = 0f; // ゲーム内の全ての処理を停止
-            isGameOver = true;
-            Debug.Log("ゲームオーバー");
+            audioSource.PlayOneShot(playerHittedSE);
+        }
+
+        private void PlayPlayerDeadSE()
+        {
+            audioSource.PlayOneShot(playerDeadSE);
+        }
+
+        private void ChangeSprite(Sprite sprite)
+        {
+            spriteRenderer.sprite = sprite;
         }
     }
 }
