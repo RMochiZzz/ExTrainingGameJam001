@@ -18,6 +18,7 @@ namespace Other.Control
 
         public void OnButtonClick()
         {
+            GManager.instance.StartGame();
             StartCoroutine(TransitionSeq());
         }
 

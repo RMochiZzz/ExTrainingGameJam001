@@ -8,30 +8,34 @@ namespace Combat.PlayerBulletMotion
     {
         [SerializeField] private float Bulletspeed;
         [SerializeField] private float maxDistance;
+        public float offset = 0.1f;
 
         private Rigidbody2D rb;
-        private Vector3 defaultPos;
 
         // Start is called before the first frame update
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            defaultPos = transform.position;
         }
 
         // Update is called once per frame
         void Update()
         {
-            float d = Vector3.Distance(transform.position, defaultPos);
+            rb.MovePosition(transform.position += transform.up * Time.deltaTime * Bulletspeed);
+            if (!IsInCameraView()) return;
+            Destroy(gameObject);
 
-            if (d > maxDistance)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                rb.MovePosition(transform.position += transform.up * Time.deltaTime * Bulletspeed);
-            }
+        }
+
+        private bool IsInCameraView()
+        {
+            Vector3 viewPosition = Camera.main.WorldToViewportPoint(transform.position);
+
+            if (viewPosition.x <= 0 - offset) return true;
+            if (viewPosition.x >= 1 + offset) return true;
+            if (viewPosition.y <= 0 - offset) return true;
+            if (viewPosition.y >= 1 + offset) return true;
+            return false;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 1152776626325277696}
   - component: {fileID: 7859546867813930229}
   - component: {fileID: 4519670715509669610}
+  - component: {fileID: 2166425963408209494}
+  - component: {fileID: 5709137304696760339}
+  - component: {fileID: 5183076614233842069}
   m_Layer: 0
   m_Name: Playerver.2
   m_TagString: Player
@@ -191,6 +194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerBulletPrefab: {fileID: 449264374409620109, guid: 3bbed3c811a45e244b66d2cdd775bd60, type: 3}
   AttackInterval: 0.2
+  playerAttackSE: {fileID: 8300000, guid: 680bcaab614f4e04182f35725640edb4, type: 3}
+  AttackseVolum: 0.2
 --- !u!114 &4519670715509669610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +208,130 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c358addd5101b94498f55baac638e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2166425963408209494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299460866539631224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa91fc73fcaca146b1ead2c6de66e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeadSprite: {fileID: 0}
+  playerHittedSE: {fileID: 8300000, guid: 1a610f3a0640a0345aff94945f5f0f38, type: 3}
+  playerDeadSE: {fileID: 8300000, guid: 71956da8d08f8fe49bb1bcc3211bbce5, type: 3}
+  HitseVolum: 0.6
+  DeadseVolum: 0.4
+--- !u!82 &5709137304696760339
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299460866539631224}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5183076614233842069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299460866539631224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb28fca1d765a941871bcfb8293e335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playergetitemSE: {fileID: 8300000, guid: 1bf007e4196d0b240b0945e88fe35881, type: 3}
+  getitemseVolum: 0.2
