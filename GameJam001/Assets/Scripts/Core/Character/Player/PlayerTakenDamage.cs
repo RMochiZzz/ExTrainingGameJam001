@@ -57,6 +57,28 @@ namespace Combat.PlayerDamage
             }
         }
 
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Enemy"))
+            {
+                if (isInvincible) return;
+
+                GManager.instance.SubHeartNum();
+
+                if (!GManager.instance.isGameOver)
+                {
+                    PlayPlayerHittedSE(HitseVolum);
+                    StartInvincibleState();
+                }
+                else
+                {
+                    ChangeSprite(DeadSprite);
+                    PlayPlayerDeadSE(DeadseVolum);
+                    StartInvincibleState();
+                }
+            }
+        }
+
         private void StartInvincibleState()
         {
             isInvincible = true;
