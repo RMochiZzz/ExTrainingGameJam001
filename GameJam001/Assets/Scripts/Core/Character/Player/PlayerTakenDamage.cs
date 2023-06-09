@@ -56,10 +56,11 @@ namespace Combat.PlayerDamage
                 }
             }
         }
-
+        
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Enemy"))
+            string tag = collision.gameObject.tag;
+            if (tag == "EnemyBullet" || tag == "Enemy" || tag == "Obstacle")
             {
                 if (isInvincible) return;
 
