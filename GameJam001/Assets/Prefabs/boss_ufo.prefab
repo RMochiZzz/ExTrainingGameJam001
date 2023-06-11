@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultHP: 500
-  HP: 0
+  HP: 500
   bossDead: 0
   Appearing: 0
 --- !u!114 &7752442745813960122

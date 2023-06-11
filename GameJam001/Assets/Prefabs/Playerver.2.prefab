@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 1152776626325277696}
   - component: {fileID: 7859546867813930229}
   - component: {fileID: 2166425963408209494}
-  - component: {fileID: 5709137304696760339}
   - component: {fileID: 5183076614233842069}
+  - component: {fileID: 5709137304696760339}
   m_Layer: 0
   m_Name: Playerver.2
   m_TagString: Player
@@ -213,6 +213,20 @@ MonoBehaviour:
   playerDeadSE: {fileID: 8300000, guid: 71956da8d08f8fe49bb1bcc3211bbce5, type: 3}
   HitseVolum: 0.6
   DeadseVolum: 0.4
+--- !u!114 &5183076614233842069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299460866539631224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb28fca1d765a941871bcfb8293e335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playergetitemSE: {fileID: 8300000, guid: 1bf007e4196d0b240b0945e88fe35881, type: 3}
+  getitemseVolum: 0.2
 --- !u!82 &5709137304696760339
 AudioSource:
   m_ObjectHideFlags: 0
@@ -309,20 +323,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5183076614233842069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299460866539631224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb28fca1d765a941871bcfb8293e335, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playergetitemSE: {fileID: 8300000, guid: 1bf007e4196d0b240b0945e88fe35881, type: 3}
-  getitemseVolum: 0.2
 --- !u!1 &1576252848425740162
 GameObject:
   m_ObjectHideFlags: 0

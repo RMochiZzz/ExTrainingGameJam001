@@ -902,6 +902,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Playerver.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1152776626325277696, guid: 2ada33b1a37a9904bbafacb282fb803c, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 4216429243391196120}
+    - target: {fileID: 1152776626325277696, guid: 2ada33b1a37a9904bbafacb282fb803c, type: 3}
+      propertyPath: playerLeftSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7750ac81c4e25cc43a5d80555be10065, type: 3}
+    - target: {fileID: 1152776626325277696, guid: 2ada33b1a37a9904bbafacb282fb803c, type: 3}
+      propertyPath: playerRightSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dad80a8dc142473409e24e6eb9a2eb69, type: 3}
+    - target: {fileID: 1152776626325277696, guid: 2ada33b1a37a9904bbafacb282fb803c, type: 3}
+      propertyPath: playerDefaultSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1102ac6663fe1c41b6d74324bf0b0d5, type: 3}
     - target: {fileID: 1926068454421823338, guid: 2ada33b1a37a9904bbafacb282fb803c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -951,6 +967,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ada33b1a37a9904bbafacb282fb803c, type: 3}
+--- !u!212 &4216429243391196120 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 636170614374553840, guid: 2ada33b1a37a9904bbafacb282fb803c, type: 3}
+  m_PrefabInstance: {fileID: 4216429243391196119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4387662870643841091
 PrefabInstance:
   m_ObjectHideFlags: 0
