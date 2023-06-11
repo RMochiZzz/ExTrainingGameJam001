@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3182917214713703153}
   - component: {fileID: 1152776626325277696}
   - component: {fileID: 7859546867813930229}
-  - component: {fileID: 4519670715509669610}
   - component: {fileID: 2166425963408209494}
   - component: {fileID: 5709137304696760339}
   - component: {fileID: 5183076614233842069}
@@ -40,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 2495388672578481418}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &636170614374553840
 SpriteRenderer:
@@ -82,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b1102ac6663fe1c41b6d74324bf0b0d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -197,18 +196,6 @@ MonoBehaviour:
   AttackInterval: 0.2
   playerAttackSE: {fileID: 8300000, guid: 680bcaab614f4e04182f35725640edb4, type: 3}
   AttackseVolum: 0.2
---- !u!114 &4519670715509669610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299460866539631224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c358addd5101b94498f55baac638e7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2166425963408209494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa91fc73fcaca146b1ead2c6de66e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeadSprite: {fileID: 0}
+  DeadSprite: {fileID: 21300000, guid: 021a1fd042d95433a938f2254226deda, type: 3}
   playerHittedSE: {fileID: 8300000, guid: 1a610f3a0640a0345aff94945f5f0f38, type: 3}
   playerDeadSE: {fileID: 8300000, guid: 71956da8d08f8fe49bb1bcc3211bbce5, type: 3}
   HitseVolum: 0.6

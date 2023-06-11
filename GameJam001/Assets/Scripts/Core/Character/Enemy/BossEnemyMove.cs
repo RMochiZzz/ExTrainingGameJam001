@@ -8,27 +8,33 @@ namespace BossEnemy
     {
         [SerializeField] private float moveySpeed;
         [SerializeField] private float movexSpeed;
-        [SerializeField] private float moveDistance; 
+        [SerializeField] private float moveDistance;
         [SerializeField] private float stopDuration;
-        [SerializeField] private float initialYPosition; 
+        [SerializeField] private float initialYPosition;
 
-        private bool Appearing = true;
-        private float stopTimer = 0f;
+        private BossEnemyStatus bossEnemyStatus;
+
+        private float stopTimer;
         private float initialXPosition;
-        private float offsetX = 0f;
+        private float offsetX;
 
         private void Start()
         {
-            initialXPosition = transform.position.x;
+            bossEnemyStatus = GetComponent<BossEnemyStatus>();
+            stopTimer = 0f;
+            offsetX = 0f;
+            initialXPosition = 0f;
+            GManager.instance.isBossBattle = true;
+
         }
 
         private void Update()
         {
+            if (bossEnemyStatus.bossDead) return;
             Appearance();
-            if (Appearing) return;
+            if (bossEnemyStatus.Appearing) return;
 
-            offsetX = Mathf.PingPong(Time.time * movexSpeed, moveDistance * 2) - moveDistance;
-            float moveX = initialXPosition + offsetX;
+            offsetX = Mathf.PingPong((Time.time - stopDuration) * movexSpeed, moveDistance * 2) - moveDistance; float moveX = initialXPosition + offsetX;
             Vector3 newPosition = new Vector3(moveX, transform.position.y, transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, newPosition, movexSpeed * Time.deltaTime);
         }
@@ -40,9 +46,11 @@ namespace BossEnemy
                 Vector2 move = -transform.up * moveySpeed * Time.deltaTime;
                 transform.position += new Vector3(move.x, move.y, 0);
             }
-            stopTimer += Time.deltaTime;
-
-            if (stopTimer >= stopDuration) Appearing = false;
+            else
+            {
+                stopTimer += Time.deltaTime;
+                if (stopTimer >= stopDuration) bossEnemyStatus.Appearing = false;
+            }
         }
     }
 }

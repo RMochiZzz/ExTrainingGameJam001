@@ -17,6 +17,8 @@ namespace PlayerMoveSystem
         // Update is called once per frame
         public void MoveStance(float moveX, float moveY)
         {
+            if (GManager.instance.isGameClear) return;
+
             Vector2 movement = new Vector2(moveX, moveY);
             movement.Normalize();
             Vector3 newPosition = transform.position + new Vector3(movement.x, movement.y, 0f) * speed * Time.deltaTime;
