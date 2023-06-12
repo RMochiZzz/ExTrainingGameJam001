@@ -1324,6 +1324,10 @@ PrefabInstance:
       propertyPath: HeartNum
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8759249797296761950, guid: d992e3103964e134e87f9458f4a9b21a, type: 3}
+      propertyPath: LevelNum
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

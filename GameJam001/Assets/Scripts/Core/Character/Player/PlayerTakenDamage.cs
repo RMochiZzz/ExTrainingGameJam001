@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DeadVideo;
 
 namespace Combat.PlayerDamage
 {
@@ -9,7 +10,6 @@ namespace Combat.PlayerDamage
         private bool isInvincible = false;
         private int blinkCount = 0;
 
-        [SerializeField] private Sprite DeadSprite;
         [SerializeField] private AudioClip playerHittedSE;
         [SerializeField] private AudioClip playerDeadSE;
         private AudioSource audioSource;
@@ -17,6 +17,8 @@ namespace Combat.PlayerDamage
         [SerializeField] private float DeadseVolum;
 
         private SpriteRenderer spriteRenderer;
+        private Explosion explosion;
+        private bool doDead;
 
 
         // Start is called before the first frame update
@@ -24,10 +26,13 @@ namespace Combat.PlayerDamage
         {
             audioSource = GetComponent<AudioSource>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+            explosion = GetComponent<Explosion>();
+            doDead = false;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (doDead) return;
             string tag = collision.gameObject.tag;
             if (tag == "EnemyBullet" || tag == "Enemy" || tag == "Obstacle")
             {
@@ -42,15 +47,16 @@ namespace Combat.PlayerDamage
                 }
                 else
                 {
-                    ChangeSprite(DeadSprite);
+                    doDead = true;
                     PlayPlayerDeadSE(DeadseVolum);
-                    StartInvincibleState();
+                    explosion.PlayExplosion(transform.position);
                 }
             }
         }
         
         private void OnTriggerStay2D(Collider2D collision)
         {
+            if (doDead) return;
             string tag = collision.gameObject.tag;
             if (tag == "EnemyBullet" || tag == "Enemy" || tag == "Obstacle")
             {
@@ -65,9 +71,9 @@ namespace Combat.PlayerDamage
                 }
                 else
                 {
-                    ChangeSprite(DeadSprite);
+                    doDead = true;
                     PlayPlayerDeadSE(DeadseVolum);
-                    StartInvincibleState();
+                    explosion.PlayExplosion(transform.position);
                 }
             }
         }

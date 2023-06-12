@@ -1,5 +1,7 @@
 using Core.Enemy;
 using UnityEngine;
+using DeadVideo;
+
 
 namespace Core.Character.Enemy
 {
@@ -12,19 +14,26 @@ namespace Core.Character.Enemy
         private AudioSource audioSource;
         [SerializeField] private float DeadseVolum;
 
+        private Explosion explosion;
+        private bool doDead;
+
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
+            explosion = GetComponent<Explosion>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (doDead) return;
             if (!collision.gameObject.CompareTag("PlayerBullet")) return;
             hitCounter++;
 
             if (hitCounter < EnemyAttribute.eraseValue) return;
+            doDead = true;
+            gameObject.tag = "Untagged";
             PlayDeadSE(DeadseVolum);
-            Destroy(gameObject);
+            explosion.PlayExplosion(transform.position);
             EnemyAttribute.enemyInstanceCounter--;
         }
 

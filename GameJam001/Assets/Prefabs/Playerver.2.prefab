@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2166425963408209494}
   - component: {fileID: 5183076614233842069}
   - component: {fileID: 5709137304696760339}
+  - component: {fileID: 2112001730950649464}
   m_Layer: 0
   m_Name: Playerver.2
   m_TagString: Player
@@ -39,7 +40,7 @@ Transform:
   m_Children:
   - {fileID: 2495388672578481418}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &636170614374553840
 SpriteRenderer:
@@ -326,6 +327,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2112001730950649464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299460866539631224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f04fc617ca9c54f8bada74705158e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionClip: {fileID: 32900000, guid: d3fe079443108411eb81f6923e729550, type: 3}
 --- !u!1 &1576252848425740162
 GameObject:
   m_ObjectHideFlags: 0
