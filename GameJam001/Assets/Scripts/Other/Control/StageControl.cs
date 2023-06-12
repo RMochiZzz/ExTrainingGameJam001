@@ -32,6 +32,7 @@ namespace StageCtrl
             mainCamera = Camera.main;
             audioSource = GetComponent<AudioSource>();
             audioSource.PlayOneShot(fieldbgm, fieldbgmVolum);
+            audioSource.loop = true;
             doGameOver = false;
             doGameClear = false;
         }
