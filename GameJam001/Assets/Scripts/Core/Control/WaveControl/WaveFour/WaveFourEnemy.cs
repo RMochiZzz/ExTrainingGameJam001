@@ -11,7 +11,6 @@ namespace Core.Control.WaveControl
         private float offsetXSide = 0f;
         private float cameraHeight;
         private float cameraWidth;
-        private int counter;
         private float rotation;
         private WaveFourObstacle waveFourObstacle;
 
@@ -85,7 +84,6 @@ namespace Core.Control.WaveControl
             offsetXTop = 0.6f;
             offsetXSide = 1.3f;
             rotation = 180f;
-            counter = 0;
             cameraHeight = Camera.main.orthographicSize;
             cameraWidth = cameraHeight * Camera.main.aspect;
         }

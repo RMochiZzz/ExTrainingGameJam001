@@ -26,7 +26,7 @@ namespace Core.Item
             if (viewPosition.x <= 0 - offset) return true;
             if (viewPosition.x >= 1 + offset) return true;
             if (viewPosition.y <= 0 - offset) return true;
-            if (viewPosition.y >= 1 + offset) return true;
+
             return false;
         }
 

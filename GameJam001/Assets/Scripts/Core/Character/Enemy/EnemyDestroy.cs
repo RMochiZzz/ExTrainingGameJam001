@@ -47,7 +47,9 @@ namespace Core.Character.Enemy
         {
             Vector3 viewPosition = Camera.main.WorldToViewportPoint(transform.position);
 
-            if (viewPosition.y <= 0 - offset) return true;
+            if (viewPosition.y <= -2f) return true;
+            if (viewPosition.x >= 2f) return true;
+            if (viewPosition.x <= -2f) return true;
             return false;
         }
 
