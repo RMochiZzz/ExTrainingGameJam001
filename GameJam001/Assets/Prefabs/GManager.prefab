@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8759249797296761950
 MonoBehaviour:
@@ -48,5 +48,6 @@ MonoBehaviour:
   HeartNum: 3
   defaultLevelNum: 1
   LevelNum: 1
+  isBossBattle: 0
   isGameOver: 0
   isGameClear: 0

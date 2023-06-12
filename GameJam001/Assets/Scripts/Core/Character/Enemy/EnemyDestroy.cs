@@ -8,12 +8,22 @@ namespace Core.Character.Enemy
         public float offset = 0.1f;
         private int hitCounter = 0;
 
+        [SerializeField] private AudioClip DeadSE;
+        private AudioSource audioSource;
+        [SerializeField] private float DeadseVolum;
+
+        private void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.gameObject.CompareTag("PlayerBullet")) return;
             hitCounter++;
 
             if (hitCounter < EnemyAttribute.eraseValue) return;
+            PlayDeadSE(DeadseVolum);
             Destroy(gameObject);
             EnemyAttribute.enemyInstanceCounter--;
         }
@@ -31,5 +41,11 @@ namespace Core.Character.Enemy
             if (viewPosition.y <= 0 - offset) return true;
             return false;
         }
+
+        private void PlayDeadSE(float volumeScale)
+        {
+            audioSource.PlayOneShot(DeadSE, volumeScale);
+        }
+
     }
 }

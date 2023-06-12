@@ -24,6 +24,7 @@ namespace Combat.PlayerAttackMotion
         void Update()
         {
             if (GManager.instance.isGameOver) return;
+            if (GManager.instance.isGameClear) return;
 
             if (timer > AttackInterval)
             {

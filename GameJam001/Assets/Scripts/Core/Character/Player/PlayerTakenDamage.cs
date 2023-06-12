@@ -18,9 +18,6 @@ namespace Combat.PlayerDamage
 
         private SpriteRenderer spriteRenderer;
 
-        private void Awake()
-        {
-        }
 
         // Start is called before the first frame update
         void Start()
@@ -29,21 +26,39 @@ namespace Combat.PlayerDamage
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        // Update is called once per frame
-        private void Update()
-        {
-
-        }
-
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Enemy"))
+            string tag = collision.gameObject.tag;
+            if (tag == "EnemyBullet" || tag == "Enemy" || tag == "Obstacle")
             {
                 if (isInvincible) return;
 
                 GManager.instance.SubHeartNum();
 
                 if(!GManager.instance.isGameOver)
+                {
+                    PlayPlayerHittedSE(HitseVolum);
+                    StartInvincibleState();
+                }
+                else
+                {
+                    ChangeSprite(DeadSprite);
+                    PlayPlayerDeadSE(DeadseVolum);
+                    StartInvincibleState();
+                }
+            }
+        }
+        
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            string tag = collision.gameObject.tag;
+            if (tag == "EnemyBullet" || tag == "Enemy" || tag == "Obstacle")
+            {
+                if (isInvincible) return;
+
+                GManager.instance.SubHeartNum();
+
+                if (!GManager.instance.isGameOver)
                 {
                     PlayPlayerHittedSE(HitseVolum);
                     StartInvincibleState();

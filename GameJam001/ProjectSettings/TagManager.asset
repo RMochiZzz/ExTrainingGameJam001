@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - PlayerBullet
   - LevelUpItem
+  - Obstacle
   layers:
   - Default
   - TransparentFX
