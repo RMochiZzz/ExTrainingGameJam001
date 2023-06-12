@@ -252,7 +252,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487281074}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79eee6d226349534ba64b4ce418a3d07, type: 3}
   m_Name: 
@@ -321,7 +321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0f0f5f2b65e4f4083ca27ccc4c0846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldbgm: {fileID: 8300000, guid: 65e27fcb40f22ca47bac7b88b67bd760, type: 3}
   bossbgm01: {fileID: 8300000, guid: 556cc3e2e6b09804496530cb2ac945f6, type: 3}
   bossbgm02: {fileID: 8300000, guid: 525ccec6d32ea5a4ebe487767a9a9d67, type: 3}
   fieldbgmVolum: 0.2
@@ -356,9 +355,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 65e27fcb40f22ca47bac7b88b67bd760, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

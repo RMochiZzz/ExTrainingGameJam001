@@ -7,7 +7,6 @@ namespace StageCtrl
 {
     public class StageControl : MonoBehaviour
     {
-        [SerializeField] private AudioClip fieldbgm;
         [SerializeField] private AudioClip bossbgm01;
         [SerializeField] private AudioClip bossbgm02;
         [SerializeField] private float fieldbgmVolum;
@@ -31,8 +30,6 @@ namespace StageCtrl
             playerObject = GameObject.FindGameObjectWithTag("Player");
             mainCamera = Camera.main;
             audioSource = GetComponent<AudioSource>();
-            audioSource.PlayOneShot(fieldbgm, fieldbgmVolum);
-            audioSource.loop = true;
             doGameOver = false;
             doGameClear = false;
         }
@@ -65,6 +62,8 @@ namespace StageCtrl
         {
             if (GManager.instance.isGameClear && !doGameClear)
             {
+                int heartscore = GManager.instance.HeartNum * 100;
+                GManager.instance.score += heartscore;
                 gameClearObj.SetActive(true);
                 doGameClear = true;
             }
