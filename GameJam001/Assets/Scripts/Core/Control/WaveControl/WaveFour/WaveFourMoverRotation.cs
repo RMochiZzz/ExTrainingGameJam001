@@ -23,12 +23,12 @@ namespace Core.Control.WaveControl
                 forwardDirection = -transform.right;
                 Mover();
             }
-            else if (Time.time - time >= 11 && Time.time - time <= 13.5)
+            else if (Time.time - time >= 11.1 && Time.time - time <= 14)
             {
                 forwardDirection = -transform.up;
                 Mover();
             }
-            else if (Time.time - time >= 13.6)
+            else if (Time.time - time >= 14.1)
             {
                 forwardDirection = transform.right;
                 Mover();

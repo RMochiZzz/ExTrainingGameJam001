@@ -7,9 +7,11 @@ namespace Core.Control.WaveControl
     {
         public GameObject enemyPrefab;
         public GameObject obstaclePrefab;
+        public GameObject bossPrefab;
         private int waveCounter = 1;
         private WaveOne waveOne;
         private WaveFour waveFour;
+        private WaveBoss waveBoss;
 
         void Start()
         {
@@ -18,6 +20,8 @@ namespace Core.Control.WaveControl
             waveOne = waveOneobj.AddComponent<WaveOne>();
             GameObject waveFourobj = new GameObject("WaveFour");
             waveFour = waveFourobj.AddComponent<WaveFour>();
+            GameObject waveBossobj = new GameObject("WaveBoss");
+            waveBoss = waveBossobj.AddComponent<WaveBoss>();
 
             StartNextWave();
         }
@@ -37,7 +41,7 @@ namespace Core.Control.WaveControl
             else if (waveCounter == 2)
             {
                 waveFour.SpawnEnemy(enemyPrefab, obstaclePrefab);
-                yield return new WaitForSeconds(60);
+                yield return new WaitForSeconds(50);
             }
             else if (waveCounter == 3)
             {
@@ -47,11 +51,11 @@ namespace Core.Control.WaveControl
             else if (waveCounter == 4)
             {
                 waveFour.SpawnEnemy(enemyPrefab, obstaclePrefab);
-                yield return new WaitForSeconds(60);
+                yield return new WaitForSeconds(50);
             }
             else if (waveCounter == 5)
             {
-                waveOne.SpawnEnemy(enemyPrefab);
+                waveBoss.SpawnBoss(bossPrefab);
                 yield break;
             }
 
