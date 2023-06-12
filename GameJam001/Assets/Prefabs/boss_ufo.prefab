@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335e1bd375237b44ba10e7cbea79ebe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultHP: 500
-  HP: 500
+  defaultHP: 2000
+  HP: 2000
   bossDead: 0
   Appearing: 0
 --- !u!114 &7752442745813960122
