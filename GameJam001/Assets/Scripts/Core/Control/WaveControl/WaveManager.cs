@@ -8,20 +8,25 @@ namespace Core.Control.WaveControl
         public GameObject enemyPrefab;
         public GameObject obstaclePrefab;
         public GameObject bossPrefab;
+        public GameObject ItemPrefab;
         private int waveCounter = 1;
         private WaveOne waveOne;
         private WaveFour waveFour;
         private WaveBoss waveBoss;
+        private ItemInstance itemInstance;
 
         void Start()
         {
-
             GameObject waveOneobj = new GameObject("WaveOne");
             waveOne = waveOneobj.AddComponent<WaveOne>();
             GameObject waveFourobj = new GameObject("WaveFour");
             waveFour = waveFourobj.AddComponent<WaveFour>();
             GameObject waveBossobj = new GameObject("WaveBoss");
             waveBoss = waveBossobj.AddComponent<WaveBoss>();
+            GameObject itemInstanceobj = new GameObject("ItemInstance");
+            itemInstance = itemInstanceobj.AddComponent<ItemInstance>();
+
+            itemInstance.SpawnManager(ItemPrefab);
 
             StartNextWave();
         }

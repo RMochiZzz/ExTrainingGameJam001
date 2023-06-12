@@ -12,7 +12,6 @@ namespace Core.Control.WaveControl
         private float cameraHeightHalf;
         private float cameraWidthHalf;
         private int counter;
-        private float rotation;
 
         public void SpawnManager(GameObject obstaclePrefab)
         {
@@ -178,7 +177,6 @@ namespace Core.Control.WaveControl
             offsetXTop = 0.3f;
             offsetXObstacle = 0f;
             sign = 1;
-            rotation = 180f;
             counter = 0;
             cameraHeightHalf = Camera.main.orthographicSize;
             cameraWidthHalf = cameraHeightHalf * Camera.main.aspect;

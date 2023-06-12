@@ -5,14 +5,6 @@ namespace Core.Control.WaveControl
 {
     public class WaveFour : MonoBehaviour
     {
-        private float offsetYTop = 0f;
-        private float offsetYSide = 0f;
-        private float offsetXTop = 0f;
-        private float offsetXSide = 0f;
-        private float cameraHeight;
-        private float cameraWidth;
-        private int counter;
-        private float rotation;
         private WaveFourObstacle waveFourObstacle;
         private WaveFourEnemy WaveFourEnemy;
 

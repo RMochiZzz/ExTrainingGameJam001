@@ -5,11 +5,11 @@ namespace Core.Item
     public class ItemMover : MonoBehaviour
     {
 
-        public float moveSpeed = 1f;
+        public float moveSpeed = 20f;
 
         private void Update()
         {
-            Vector2 direction = -transform.up;
+            Vector2 direction = transform.up;
 
             Vector2 move = direction * moveSpeed * Time.deltaTime;
 
