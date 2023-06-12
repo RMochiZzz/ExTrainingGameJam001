@@ -5,12 +5,13 @@ namespace Core.Character.Enemy
 {
     public class EnemyDestroy : MonoBehaviour
     {
-        public float offset = 0.1f;
         private int hitCounter = 0;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.gameObject.CompareTag("PlayerBullet")) return;
+            //if (!collision.gameObject.CompareTag("Obstacle")) return;
+
             hitCounter++;
 
             if (hitCounter < EnemyAttribute.eraseValue) return;
@@ -28,7 +29,11 @@ namespace Core.Character.Enemy
         {
             Vector3 viewPosition = Camera.main.WorldToViewportPoint(transform.position);
 
-            if (viewPosition.y <= 0 - offset) return true;
+            if (viewPosition.y <= -2) return true;
+            if (viewPosition.y >= 2) return true;
+            if (viewPosition.x <= -2) return true;
+            if (viewPosition.x >= 2) return true;
+
             return false;
         }
     }

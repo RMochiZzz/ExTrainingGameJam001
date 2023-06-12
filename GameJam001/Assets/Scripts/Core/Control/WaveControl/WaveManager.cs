@@ -1,17 +1,24 @@
 using UnityEngine;
 using System.Collections;
 
-namespace Core.Control.WaveManager
+namespace Core.Control.WaveControl
 {
     public class WaveManager : MonoBehaviour
     {
-        private float time;
         public GameObject enemyPrefab;
-
+        public GameObject obstaclePrefab;
+        private int waveCounter = 1;
+        private WaveOne waveOne;
+        private WaveFour waveFour;
 
         void Start()
         {
-            time = 0f;
+
+            GameObject waveOneobj = new GameObject("WaveOne");
+            waveOne = waveOneobj.AddComponent<WaveOne>();
+            GameObject waveFourobj = new GameObject("WaveFour");
+            waveFour = waveFourobj.AddComponent<WaveFour>();
+
             StartNextWave();
         }
 
@@ -22,33 +29,33 @@ namespace Core.Control.WaveManager
 
         private IEnumerator SpawnWave()
         {
-            if (Time.time - time >= 0)
+            if (waveCounter == 1)
             {
-                WaveOne.SpawnEnemy(enemyPrefab);
+                waveOne.SpawnEnemy(enemyPrefab);
+                yield return new WaitForSeconds(20);
             }
-            else if (Time.time - time >= 40)
+            else if (waveCounter == 2)
             {
-                WaveOne.SpawnEnemy(enemyPrefab);
+                waveFour.SpawnEnemy(enemyPrefab, obstaclePrefab);
+                yield return new WaitForSeconds(60);
             }
-            else if (Time.time - time >= 60)
+            else if (waveCounter == 3)
             {
-                WaveOne.SpawnEnemy(enemyPrefab);
+                waveOne.SpawnEnemy(enemyPrefab);
+                yield return new WaitForSeconds(20);
             }
-            else if (Time.time - time >= 80)
+            else if (waveCounter == 4)
             {
-                WaveOne.SpawnEnemy(enemyPrefab);
+                waveFour.SpawnEnemy(enemyPrefab, obstaclePrefab);
+                yield return new WaitForSeconds(60);
             }
-            else if (Time.time - time >= 100)
+            else if (waveCounter == 5)
             {
-                WaveOne.SpawnEnemy(enemyPrefab);
-            }
-            else if (Time.time - time >= 120)
-            {
-                WaveOne.SpawnEnemy(enemyPrefab);
+                waveOne.SpawnEnemy(enemyPrefab);
                 yield break;
             }
 
-            yield return new WaitForSeconds(WaveAttribute.spawnInterval);
+            waveCounter++;
             StartNextWave();
         }
     }

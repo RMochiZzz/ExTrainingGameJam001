@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 794412470313862250, guid: fb0d615c83141c348a2d9c79870ec54c, type: 3}
+  obstaclePrefab: {fileID: 7330290743877552045, guid: 29799e92d57b50b4daf99948067d1ce7, type: 3}
 --- !u!1 &711959563
 GameObject:
   m_ObjectHideFlags: 0
