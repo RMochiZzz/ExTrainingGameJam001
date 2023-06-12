@@ -1,4 +1,5 @@
 using UnityEngine;
+using Core.Character.Enemy;
 
 namespace Core.Weapon
 {
@@ -8,9 +9,16 @@ namespace Core.Weapon
         private float lastSpownTime = 0;
         private float offset = 0.01f;
 
+        private EnemyDestroy enemyDestroy;
+
+        public void Start()
+        {
+            enemyDestroy = transform.parent.GetComponent<EnemyDestroy>();
+        }
+
         void Update()
         {
-
+            if (enemyDestroy.doDead) return;
             if (IsInCameraView()) return;
             if (Time.time - lastSpownTime <= BulletAttribute.fireInterval) return;
             Vector3 spawnPointPosition = gameObject.transform.position ;
