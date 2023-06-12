@@ -22,7 +22,12 @@ namespace PlayerMoveSystem
         // Update is called once per frame
         public void MoveStance(float moveX, float moveY)
         {
-            if (GManager.instance.isGameClear) return;
+            if (GManager.instance.isGameOver) return;
+            if (GManager.instance.isGameClear)
+            {
+                spriteRenderer.sprite = playerDefaultSprite;
+                return;
+            }
 
             Vector2 movement = new Vector2(moveX, moveY);
             movement.Normalize();

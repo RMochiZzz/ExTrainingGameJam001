@@ -179,6 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05332b74c5956ed4ebe733f4e32bf2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDefaultSprite: {fileID: 21300000, guid: b1102ac6663fe1c41b6d74324bf0b0d5, type: 3}
+  playerLeftSprite: {fileID: 21300000, guid: 7750ac81c4e25cc43a5d80555be10065, type: 3}
+  playerRightSprite: {fileID: 21300000, guid: dad80a8dc142473409e24e6eb9a2eb69, type: 3}
   speed: 8
 --- !u!114 &7859546867813930229
 MonoBehaviour:

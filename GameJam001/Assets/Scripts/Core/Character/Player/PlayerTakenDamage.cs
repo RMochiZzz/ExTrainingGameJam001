@@ -26,12 +26,6 @@ namespace Combat.PlayerDamage
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        // Update is called once per frame
-        private void Update()
-        {
-
-        }
-
         private void OnTriggerEnter2D(Collider2D collision)
         {
             string tag = collision.gameObject.tag;
