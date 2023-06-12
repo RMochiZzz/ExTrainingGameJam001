@@ -15,7 +15,7 @@ namespace Core.Character.Enemy
         [SerializeField] private float DeadseVolum;
 
         private Explosion explosion;
-        private bool doDead;
+        public bool doDead;
 
         private void Start()
         {

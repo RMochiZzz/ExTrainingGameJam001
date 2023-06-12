@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 5183076614233842069}
   - component: {fileID: 5709137304696760339}
   - component: {fileID: 2112001730950649464}
+  - component: {fileID: 2293203818103390606}
   m_Layer: 0
   m_Name: Playerver.2
   m_TagString: Player
@@ -40,7 +41,7 @@ Transform:
   m_Children:
   - {fileID: 2495388672578481418}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &636170614374553840
 SpriteRenderer:
@@ -212,7 +213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa91fc73fcaca146b1ead2c6de66e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeadSprite: {fileID: 21300000, guid: 021a1fd042d95433a938f2254226deda, type: 3}
   playerHittedSE: {fileID: 8300000, guid: 1a610f3a0640a0345aff94945f5f0f38, type: 3}
   playerDeadSE: {fileID: 8300000, guid: 71956da8d08f8fe49bb1bcc3211bbce5, type: 3}
   HitseVolum: 0.6
@@ -340,6 +340,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionClip: {fileID: 32900000, guid: d3fe079443108411eb81f6923e729550, type: 3}
+--- !u!328 &2293203818103390606
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299460866539631224}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 0}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 3
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 1
+  m_TargetAudioSources:
+  - {fileID: 5709137304696760339}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &1576252848425740162
 GameObject:
   m_ObjectHideFlags: 0
