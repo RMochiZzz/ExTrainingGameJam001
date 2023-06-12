@@ -39,6 +39,7 @@ namespace BossEnemy
                 PlayDeadSE(DeadseVolum);
                 RemoveBullets();
             }
+            GManager.instance.score += 1000;
             DeadFadeOut();
         }
 

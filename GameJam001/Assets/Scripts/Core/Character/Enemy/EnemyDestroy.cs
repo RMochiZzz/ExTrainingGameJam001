@@ -32,6 +32,7 @@ namespace Core.Character.Enemy
             if (hitCounter < EnemyAttribute.eraseValue) return;
             doDead = true;
             gameObject.tag = "Untagged";
+            GManager.instance.score += 10;
             PlayDeadSE(DeadseVolum);
             explosion.PlayExplosion(transform.position);
             EnemyAttribute.enemyInstanceCounter--;

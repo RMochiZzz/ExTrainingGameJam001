@@ -16,6 +16,9 @@ namespace Core.Enemy
 
         private void Update()
         {
+            if (!GManager.instance.isBossBattle) return;
+            if (GManager.instance.isGameClear) return;
+            if (GManager.instance.isGameOver) return;
             if (Time.time - lastInstanceTime <= EnemyAttribute.spawnInterbal) return;
             Vector3 cameraPosition = Camera.main.transform.position;
             float cameraHeight = 2f * Camera.main.orthographicSize;

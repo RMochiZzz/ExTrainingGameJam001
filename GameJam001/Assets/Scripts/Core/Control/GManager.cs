@@ -9,9 +9,10 @@ public class GManager : MonoBehaviour
     public int HeartNum;
     public int defaultLevelNum;
     public int LevelNum;
-    /*[HideInInspector]*/ public bool isBossBattle = false;
-    /*[HideInInspector]*/ public bool isGameOver = false;
-    /*[HideInInspector]*/ public bool isGameClear = false;
+    public int score;
+    [HideInInspector] public bool isBossBattle = false;
+    [HideInInspector] public bool isGameOver = false;
+    [HideInInspector] public bool isGameClear = false;
 
 
     private void Awake()
@@ -50,6 +51,7 @@ public class GManager : MonoBehaviour
 
     public void StartGame()
     {
+        score = 0;
         isBossBattle = false;
         isGameOver = false;
         isGameClear = false;
