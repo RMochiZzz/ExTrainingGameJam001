@@ -252,7 +252,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487281074}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79eee6d226349534ba64b4ce418a3d07, type: 3}
   m_Name: 
@@ -291,6 +291,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 794412470313862250, guid: fb0d615c83141c348a2d9c79870ec54c, type: 3}
   obstaclePrefab: {fileID: 8256366433550746205, guid: 3dcedf7b39389fa4dbc42df11270b5aa, type: 3}
   bossPrefab: {fileID: 1302570451974618354, guid: 40e6162561da74141aad6465940839ba, type: 3}
+  ItemPrefab: {fileID: 8641423266317274583, guid: 6ada7f77c3fbaf046999e003cc41b9eb, type: 3}
 --- !u!1 &722960443
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossbgm01: {fileID: 8300000, guid: 556cc3e2e6b09804496530cb2ac945f6, type: 3}
   bossbgm02: {fileID: 8300000, guid: 525ccec6d32ea5a4ebe487767a9a9d67, type: 3}
-  fieldbgmVolum: 0.2
+  fieldbgmVolum: 1
   gameOverObj: {fileID: 1000824476}
   gameClearObj: {fileID: 1568188053}
   playerSpeed: 5
@@ -5347,7 +5348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039766659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 4.4, z: 0}
+  m_LocalPosition: {x: -8.4, y: 4.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5362,7 +5363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000824476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5643.0005}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 62.700005, y: 62.700005, z: 62.700005}
   m_ConstrainProportionsScale: 0
   m_Children: []

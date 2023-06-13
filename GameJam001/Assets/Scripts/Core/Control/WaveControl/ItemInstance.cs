@@ -9,19 +9,19 @@ namespace Core.Control.WaveControl
 
         public void SpawnManager(GameObject ItemPrefab)
         {
+            offsetYItem = 20f;
+            SpawnItem(ItemPrefab);
+
             offsetYItem = 50f;
             SpawnItem(ItemPrefab);
 
-            offsetYItem = 100f;
+            offsetYItem = 80f;
             SpawnItem(ItemPrefab);
 
-            offsetYItem = 150f;
+            offsetYItem = 110f;
             SpawnItem(ItemPrefab);
 
-            offsetYItem = 200f;
-            SpawnItem(ItemPrefab);
-
-            offsetYItem = 250f;
+            offsetYItem = 140f;
             SpawnItem(ItemPrefab);
 
         }
