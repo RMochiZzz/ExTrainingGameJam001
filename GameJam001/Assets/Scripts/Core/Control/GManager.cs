@@ -11,8 +11,8 @@ public class GManager : MonoBehaviour
     public int LevelNum;
     public int score;
     [HideInInspector] public bool isBossBattle = false;
-    [HideInInspector] public bool isGameOver = false;
-    [HideInInspector] public bool isGameClear = false;
+/*    [HideInInspector]*/ public bool isGameOver = false;
+/*    [HideInInspector] */public bool isGameClear = false;
 
 
     private void Awake()
